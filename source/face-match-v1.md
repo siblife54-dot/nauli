@@ -22,3 +22,6 @@ The only editable region is the small head/face area, approximately x=390..592, 
 Everything outside the face must remain EXACTLY unchanged: entire canvas, crop, layout, all Russian text and letterforms, NAULI title, every leaf, shadow, wave, icon, badge, background color and button. Do not redraw the design. No extra text or objects.
 Output the complete edited hero image with the same 941:1672 aspect ratio and full unchanged composition, opaque background.
 
+## Проверка
+
+В мобильном отображении 390 × 844 изменились 8460 пикселей внутри области головы. Вне этой области различий между снимками прежней и новой шапки нет. Переключение «исходник / до / после», просмотр прежней версии и прозрачная маска проверены в браузере.
