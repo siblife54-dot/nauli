@@ -10,10 +10,15 @@
   ],
   "rgb_equals_supplied_srgb_png_crop": true,
   "srgb_profile_embedded": true,
-  "spatial_blur_removed": true,
-  "unsharp_filter_removed": true,
+  "skin_smoothing": false,
+  "reconstructed_detail": false,
+  "render_only_unsharp_mask": {"fine_radius": 0.48, "fine_amount": 0.42, "local_radius": 6, "local_amount": 0.08},
   "no_geometric_changes": true,
-  "silhouette_and_composition_unchanged": true,
+  "photo_transform_and_composition_unchanged": true,
+  "contour_pixel_steps_refined": true,
+  "mask_mode": "alpha",
+  "mask_feather_source_pixels": 0.7,
+  "mobile_layout_checked": [390, 844],
   "source_resampling": false,
   "asset_bytes": 326136
 }

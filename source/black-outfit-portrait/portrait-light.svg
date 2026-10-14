@@ -1,0 +1,14 @@
+<filter id="valeria-photo-light" color-interpolation-filters="sRGB" x="-2%" y="-2%" width="104%" height="104%">
+  <!-- Detail comes from the original pixels. No denoising or face reconstruction. -->
+  <feGaussianBlur in="SourceGraphic" stdDeviation=".48" result="fine-blur"/>
+  <feComposite in="SourceGraphic" in2="fine-blur" operator="arithmetic" k2="1.42" k3="-.42" result="detail"/>
+  <feGaussianBlur in="detail" stdDeviation="6" result="broad-blur"/>
+  <feComposite in="detail" in2="broad-blur" operator="arithmetic" k2="1.08" k3="-.08" result="clarity"/>
+  <!-- Gentle warm studio curve, with a true black point and retained highlights. -->
+  <feComponentTransfer in="clarity">
+    <feFuncR type="table" tableValues="0 .075 .175 .287 .410 .535 .650 .752 .845 .925 1"/>
+    <feFuncG type="table" tableValues="0 .073 .171 .281 .403 .526 .640 .741 .834 .917 .992"/>
+    <feFuncB type="table" tableValues="0 .071 .165 .273 .393 .515 .629 .732 .827 .910 .984"/>
+    <feFuncA type="identity"/>
+  </feComponentTransfer>
+</filter>

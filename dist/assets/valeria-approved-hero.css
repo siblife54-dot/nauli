@@ -3,7 +3,7 @@
 .approved-hero__image{display:block;width:100%;height:auto;}
 .approved-hero__empty{position:absolute;inset:0;display:block;width:100%;height:auto;pointer-events:none;mask-image:url('./previous-portrait-area.svg');mask-size:100% 100%;mask-repeat:no-repeat;}
 .approved-hero__former-cta{position:absolute;left:0;top:75.84%;width:100%;height:12.56%;pointer-events:none;mask-image:linear-gradient(to bottom,transparent,#000 9%,#000 92%,transparent);}
-.approved-hero__portrait{position:absolute;left:20.063762%;top:40.598086%;width:81.025505%;max-width:none;height:auto;image-rendering:auto;filter:url('#valeria-photo-light');-webkit-mask-image:url('./valeria-black-mask-alpha.svg');mask-image:url('./valeria-black-mask-alpha.svg');mask-mode:alpha;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}
+.approved-hero__portrait{position:absolute;left:20.063762%;top:40.598086%;width:81.025505%;max-width:none;height:auto;image-rendering:auto;filter:url('#valeria-photo-light');-webkit-mask-image:url('./valeria-black-mask-alpha.svg?v=70b319ac0826');mask-image:url('./valeria-black-mask-alpha.svg?v=70b319ac0826');mask-mode:alpha;-webkit-mask-size:100% 100%;mask-size:100% 100%;-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;}
 .approved-hero__filter-defs{position:absolute;width:0;height:0;overflow:hidden;}
 .approved-hero__details{position:absolute;inset:0;display:block;width:100%;height:auto;pointer-events:none;filter:url('#approved-detail-alpha');clip-path:url("#approved-details-clip");}
 .approved-hero__dots{position:absolute;inset:0;display:block;width:100%;height:auto;pointer-events:none;}
@@ -19,3 +19,4 @@
 .approved-hero__layout-erase,.approved-hero__layout-copy{position:absolute;inset:0;display:block;width:100%;height:auto;pointer-events:none;}
 
 .approved-hero__portrait-light{position:absolute;inset:0;display:block;width:100%;height:auto;pointer-events:none;}
+.approved-hero__portrait-shadow{position:absolute;left:20.063762%;top:40.598086%;width:81.025505%;height:auto;overflow:visible;pointer-events:none;}
