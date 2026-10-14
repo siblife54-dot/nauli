@@ -23,6 +23,23 @@ html, body { margin: 0; min-width: 280px; }
   aspect-ratio: 941 / 1672;
 }
 
+.hero__face {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-mask-image: url('./face-blend-v1.svg');
+  mask-image: url('./face-blend-v1.svg');
+  mask-mode: alpha;
+  -webkit-mask-size: 100% 100%;
+  mask-size: 100% 100%;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+html[data-face="original"] .hero__face { display: none; }
+
 .hero__cta {
   position: absolute;
   top: 88.46%;

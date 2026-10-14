@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>NAULI — сравнение лица</title>
+  <link rel="stylesheet" href="./review.css">
+</head>
+<body>
+  <main>
+    <header>
+      <a class="back" href="../">← Шапка сайта</a>
+      <h1>Сравним лицо</h1>
+      <p>Исходная фотография, прежняя шапка и новая попытка.</p>
+    </header>
+    <div class="tabs" role="tablist" aria-label="Вариант фотографии">
+      <button role="tab" id="tab-reference" aria-controls="reference" aria-selected="false" tabindex="-1">Исходник</button>
+      <button role="tab" id="tab-before" aria-controls="before" aria-selected="false" tabindex="-1">До</button>
+      <button role="tab" id="tab-after" aria-controls="after" aria-selected="true">После</button>
+    </div>
+    <section class="portraits">
+      <figure id="reference" role="tabpanel" aria-labelledby="tab-reference" hidden>
+        <svg viewBox="328 318 213 284" role="img" aria-label="Исходная фотография лица Валерии"><image href="../source/valeria-face-reference.png" width="826" height="1280"/></svg>
+        <figcaption>Исходная фотография</figcaption>
+      </figure>
+      <figure id="before" role="tabpanel" aria-labelledby="tab-before" hidden>
+        <svg viewBox="370 585 265 353" role="img" aria-label="Лицо в прежней шапке"><image href="../assets/nauli-hero-20261014.png" width="941" height="1672"/></svg>
+        <figcaption>До правки</figcaption>
+      </figure>
+      <figure id="after" role="tabpanel" aria-labelledby="tab-after">
+        <svg viewBox="370 585 265 353" role="img" aria-label="Попытка приблизить лицо к исходнику">
+          <defs><mask id="face-patch" x="0" y="0" width="941" height="1672" maskUnits="userSpaceOnUse" style="mask-type:alpha"><image href="../assets/face-blend-v1.svg" width="941" height="1672"/></mask></defs>
+          <image href="../assets/nauli-hero-20261014.png" width="941" height="1672"/>
+          <image href="../assets/nauli-face-reference-v1.png" width="941" height="1672" mask="url(#face-patch)"/>
+        </svg>
+        <figcaption>После правки</figcaption>
+      </figure>
+    </section>
+    <nav class="links" aria-label="Открыть шапку">
+      <a href="../?face=reference">Открыть новую шапку ↗</a>
+      <a href="../?face=original">Посмотреть прежнюю ↗</a>
+    </nav>
+    <p class="note">Прежняя версия сохранена целиком. Новую правку можно отключить и вернуть её основной.</p>
+  </main>
+  <script src="./review.js"></script>
+</body>
+</html>
