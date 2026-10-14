@@ -44,8 +44,12 @@ asset_version=hashlib.sha256((root/'dist/assets/valeria-approved-hero.css').read
 page='''<!doctype html>
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#f6ece5"><title>NAULİ</title><meta property="og:title" content="NAULİ"><link rel="stylesheet" href="/assets/valeria-approved-hero.css"><style>html,body{margin:0;padding:0;background:#f6ece5}*{box-sizing:border-box}img{border:0}</style></head><body><main id="allrecords">'''+hero+'\n</main></body></html>\n'
 page=page.replace('/assets/valeria-approved-hero.css\"', '/assets/valeria-approved-hero.css?v='+asset_version+'\"')
-for name in ['index.html','facecontrol/index.html']:
- p=root/'dist'/name
+for name, asset_prefix in [
+ ('index.html', './dist/assets/'),
+ ('dist/index.html', './assets/'),
+ ('dist/facecontrol/index.html', '../assets/'),
+]:
+ p=root/name
  p.parent.mkdir(parents=True,exist_ok=True)
- p.write_text(page,encoding='utf-8')
+ p.write_text(page.replace('/assets/',asset_prefix),encoding='utf-8')
 print('Hero-only pages installed.')
