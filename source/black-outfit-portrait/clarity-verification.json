@@ -1,0 +1,19 @@
+{
+  "source_png_sha256": "4667171a8386dfac56433c9de29f0802d42ef2a5fb1fb9fc1d80932ac4a20d6c",
+  "source_size": [
+    826,
+    1280
+  ],
+  "asset_size": [
+    663,
+    968
+  ],
+  "rgb_equals_supplied_srgb_png_crop": true,
+  "srgb_profile_embedded": true,
+  "spatial_blur_removed": true,
+  "unsharp_filter_removed": true,
+  "no_geometric_changes": true,
+  "silhouette_and_composition_unchanged": true,
+  "source_resampling": false,
+  "asset_bytes": 326136
+}
