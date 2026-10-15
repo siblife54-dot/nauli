@@ -66,6 +66,7 @@ html, body { margin: 0; min-width: 280px; }
 .hero__tagline { font-size: 30px; letter-spacing: 3.5px; }
 .hero__intro-heading { font-size: 32px; font-weight: 700; }
 .hero__intro-support { font-size: 28px; font-style: italic; }
+.hero__lower-copy { font-size: 26px; }
 .hero__accent { fill: #ce8176; }
 
 .hero__button-copy {
