@@ -1,24 +1,26 @@
 <!doctype html>
-<html lang="ru">
+<html lang="tr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#f7ece2">
-    <title>NAULI — энергия, дыхание, здоровье</title>
-    <meta name="description" content="15 минут в день — мягкая практика для тонуса живота, осанки, дыхания и внутренней энергии. Старт сегодня. 21 день.">
-    <meta property="og:title" content="NAULI — энергия, дыхание, здоровье">
-    <meta property="og:description" content="Мягкая практика для тонуса живота, осанки, дыхания и внутренней энергии.">
+    <title>NAULI — ENERJI • İÇSEL GÜÇ • SAĞLIK</title>
+    <meta name="description" content="Günde sadece 10–15 dakika ile bedenini içeriden dönüştür. Daha doğru nefes. Daha düz bir karın. Daha fazla enerji. Daha güçlü bir sen. Başlangıç Bugün. 2 ay.">
+    <meta property="og:title" content="NAULI — ENERJI • İÇSEL GÜÇ • SAĞLIK">
+    <meta property="og:description" content="Günde sadece 10–15 dakika ile bedenini içeriden dönüştür. Daha doğru nefes. Daha düz bir karın. Daha fazla enerji. Daha güçlü bir sen.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://siblife54-dot.github.io/nauli/assets/nauli-hero-20261014.png">
-    <link rel="stylesheet" href="./assets/style.css?v=20261014-1">
+    <link rel="preload" href="./assets/nauli-sans-regular.woff" as="font" type="font/woff" crossorigin>
+    <link rel="preload" href="./assets/nauli-serif-light.woff" as="font" type="font/woff" crossorigin>
+    <link rel="stylesheet" href="./assets/style.css?v=20261015-tr-1">
   </head>
   <body>
     <main>
       <section class="hero" aria-labelledby="hero-title">
-        <!-- Only the backdrop is new. The approved PNG supplies Valeria and every foreground element. -->
+        <!-- The approved photograph stays intact; selected captions are editable SVG text. -->
         <svg class="hero__art" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 941 1672" width="941" height="1672" role="img" aria-labelledby="art-title art-description">
-          <title id="art-title">NAULI с Валерией</title>
-          <desc id="art-description">Прежняя фотография Валерии и надписи на мягком кремово-персиковом фоне с плавными волнами.</desc>
+          <title id="art-title" lang="ru">NAULI с Валерией</title>
+          <desc id="art-description" lang="ru">Прежняя фотография Валерии и надписи на мягком кремово-персиковом фоне с плавными волнами.</desc>
           <defs>
             <linearGradient id="background-base" x1="0" y1="0" x2=".95" y2="1">
               <stop stop-color="#fcf5ed"/>
@@ -48,18 +50,39 @@
               <feGaussianBlur stdDeviation=".5"/>
             </filter>
             <clipPath id="original-copy-regions">
-              <path d="M150 130H800V407H150Z M108 452H681V570H108Z M806 484H910V751H806Z M46 928H232V1122H46Z"/>
+              <path d="M150 130H800V354H150Z M806 484H910V751H806Z M46 928H232V1122H46Z"/>
             </clipPath>
+            <clipPath id="original-badge-backgrounds">
+              <path clip-rule="evenodd" d="M0 0H941V1672H0Z M274 94H460V130H274Z M531 91H644V130H531Z"/>
+            </clipPath>
+            <linearGradient id="badge-start-clean" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#f4d9cd"/><stop offset="1" stop-color="#f5dccf"/>
+            </linearGradient>
+            <linearGradient id="badge-duration-clean" x1="0" y1="0" x2="1" y2="1">
+              <stop stop-color="#f2cfc5"/><stop offset="1" stop-color="#f1d0c4"/>
+            </linearGradient>
             <linearGradient id="button-edge-fill" x1="0" y1="0" x2="1" y2="1">
               <stop stop-color="#6b6c4a"/>
               <stop offset="1" stop-color="#4e5031"/>
             </linearGradient>
             <clipPath id="original-button-region"><rect x="65.75" y="1488.75" width="812.5" height="128.5" rx="47.25"/></clipPath>
+            <linearGradient id="button-copy-fade" x1="0" y1="0" x2="0" y2="1">
+              <stop stop-color="white" stop-opacity="0"/><stop offset="1" stop-color="white"/>
+            </linearGradient>
+            <filter id="button-copy-soft-edge" x="-2%" y="-10%" width="104%" height="120%"><feGaussianBlur stdDeviation="1"/></filter>
+            <mask id="button-copy-area" maskUnits="userSpaceOnUse" x="303" y="1525" width="346" height="59" style="mask-type:alpha">
+              <rect x="306" y="1528" width="340" height="53" rx="2" fill="white" filter="url(#button-copy-soft-edge)"/>
+            </mask>
+            <mask id="button-copy-lower-blend" maskUnits="userSpaceOnUse" x="303" y="1525" width="346" height="59" style="mask-type:alpha">
+              <rect x="303" y="1525" width="346" height="59" fill="url(#button-copy-fade)"/>
+            </mask>
             <mask id="approved-foreground" maskUnits="userSpaceOnUse" maskContentUnits="userSpaceOnUse" x="0" y="0" width="941" height="1672" style="mask-type:alpha">
               <image href="./assets/nauli-hero-20261014.png" width="941" height="1672" clip-path="url(#original-copy-regions)" filter="url(#original-ink-alpha)"/>
               <g fill="white">
-                <rect x="246" y="74" width="240" height="71" rx="35.5"/>
-                <rect x="497" y="74" width="198" height="71" rx="35.5"/>
+                <g clip-path="url(#original-badge-backgrounds)">
+                  <rect x="246" y="74" width="240" height="71" rx="35.5"/>
+                  <rect x="497" y="74" width="198" height="71" rx="35.5"/>
+                </g>
                 <circle cx="753" cy="519" r="40.5"/>
                 <circle cx="753" cy="621" r="40.5"/>
                 <circle cx="753" cy="724" r="40.5"/>
@@ -75,30 +98,53 @@
             <path d="M-30 852C164 720 357 582 475 570C621 551 666 638 741 755C808 858 869 883 971 941V1284C886 1152 808 1019 679 910C574 822 494 811 367 859C225 912 106 1006-30 1095Z" fill="url(#background-wave)"/>
             <path d="M-20 1174C176 1192 266 1299 400 1391C554 1497 724 1541 961 1582V1692H-20Z" fill="url(#background-lower-wave)"/>
             <path d="M336 1672C473 1490 666 1268 941 1266V1672Z" fill="#fff7ee" opacity=".5"/>
+            <rect x="273" y="93" width="188" height="38" fill="url(#badge-start-clean)"/>
+            <rect x="530" y="90" width="115" height="41" fill="url(#badge-duration-clean)"/>
             <image href="./assets/nauli-hero-20261014.png" width="941" height="1672" mask="url(#approved-foreground)"/>
             <!-- A clean vector frame replaces the contaminated raster border. -->
             <rect x="55" y="1480" width="834" height="146" rx="58" fill="#f8e9dd" stroke="#fffaf4" stroke-width="2"/>
             <rect x="65" y="1488" width="814" height="130" rx="48" fill="url(#button-edge-fill)"/>
             <image href="./assets/nauli-hero-20261014.png" width="941" height="1672" clip-path="url(#original-button-region)"/>
+            <!-- Reuse clean rows from the same button to remove its old lettering. -->
+            <g mask="url(#button-copy-area)">
+              <svg x="303" y="1525" width="346" height="59" viewBox="303 1522 346 1" preserveAspectRatio="none">
+                <image href="./assets/nauli-hero-20261014.png" width="941" height="1672"/>
+              </svg>
+              <g mask="url(#button-copy-lower-blend)">
+                <svg x="303" y="1525" width="346" height="59" viewBox="303 1587 346 1" preserveAspectRatio="none">
+                  <image href="./assets/nauli-hero-20261014.png" width="941" height="1672"/>
+                </svg>
+              </g>
+            </g>
+            <g class="hero__editable-copy" lang="tr">
+              <text class="hero__badge-copy hero__badge-start" x="366" y="121" text-anchor="middle">Başlangıç Bugün</text>
+              <text class="hero__badge-copy" x="596" y="121" text-anchor="middle">2 ay</text>
+              <text class="hero__tagline" x="473" y="399" text-anchor="middle">ENERJI • İÇSEL GÜÇ • SAĞLIK</text>
+              <text class="hero__intro-heading" x="114" y="479"><tspan class="hero__accent">Günde sadece 10–15 dakika</tspan><tspan> ile</tspan></text>
+              <text class="hero__intro-heading" x="114" y="514">bedenini içeriden dönüştür.</text>
+              <text class="hero__intro-support" x="114" y="547">Daha doğru nefes. Daha düz bir karın.</text>
+              <text class="hero__intro-support" x="114" y="579">Daha fazla enerji. Daha güçlü bir sen.</text>
+              <text class="hero__button-copy" x="473" y="1572" text-anchor="middle">NAULİ’ye BAŞLA</text>
+            </g>
           </g>
         </svg>
 
         <div class="visually-hidden">
-          <p>Старт сегодня. 21 день.</p>
+          <p>Başlangıç Bugün. 2 ay.</p>
           <h1 id="hero-title">NAULI</h1>
-          <p>Энергия · Дыхание · Здоровье</p>
-          <p>15 минут в день — мягкая практика для тонуса живота, осанки, дыхания и внутренней энергии.</p>
-          <ul>
+          <p>ENERJI • İÇSEL GÜÇ • SAĞLIK</p>
+          <p><strong>Günde sadece 10–15 dakika ile bedenini içeriden dönüştür.</strong><br><em>Daha doğru nefes. Daha düz bir karın. Daha fazla enerji. Daha güçlü bir sen.</em></p>
+          <ul lang="ru">
             <li>Ровная осанка</li>
             <li>Легкость в теле</li>
             <li>Свежий взгляд</li>
           </ul>
-          <p>Раскроешь ресурс тела и дыхания без перегруза — за 3 недели.</p>
+          <p lang="ru">Раскроешь ресурс тела и дыхания без перегруза — за 3 недели.</p>
         </div>
 
         <!-- Connect this control when the destination is supplied. -->
-        <button class="hero__cta" type="button" disabled aria-label="Получить">
-          <span class="visually-hidden">Получить</span>
+        <button class="hero__cta" type="button" disabled aria-label="NAULİ’ye BAŞLA">
+          <span class="visually-hidden">NAULİ’ye BAŞLA</span>
         </button>
       </section>
     </main>

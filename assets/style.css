@@ -1,3 +1,35 @@
+@font-face {
+  font-family: "Nauli Sans";
+  src: url("./nauli-sans-regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nauli Sans";
+  src: url("./nauli-sans-bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nauli Sans";
+  src: url("./nauli-sans-italic.woff") format("woff");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Nauli Serif";
+  src: url("./nauli-serif-light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   color-scheme: light;
   background: #f7ece2;
@@ -21,6 +53,26 @@ html, body { margin: 0; min-width: 280px; }
   width: 100%;
   height: auto;
   aspect-ratio: 941 / 1672;
+}
+
+.hero__editable-copy {
+  font-family: "Nauli Sans", Arial, sans-serif;
+  font-weight: 400;
+  fill: #44482e;
+}
+
+.hero__badge-copy { font-size: 30px; fill: #805c46; }
+.hero__badge-start { font-size: 26px; }
+.hero__tagline { font-size: 30px; letter-spacing: 3.5px; }
+.hero__intro-heading { font-size: 32px; font-weight: 700; }
+.hero__intro-support { font-size: 28px; font-style: italic; }
+.hero__accent { fill: #ce8176; }
+
+.hero__button-copy {
+  font-family: "Nauli Serif", "Times New Roman", serif;
+  font-size: 58px;
+  font-weight: 300;
+  fill: #fffaf4;
 }
 
 .hero__cta {
