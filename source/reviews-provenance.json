@@ -1,0 +1,128 @@
+{
+  "approvedOn": "2026-10-17",
+  "approval": "The user approved the proposed quotes/categories and supplied the visual reference. Visible avatar details were disclosed before approval.",
+  "originalsAreUnmodified": true,
+  "reviews": [
+    {
+      "id": 1,
+      "originalFile": "1.jpg",
+      "sha256": "7a1a46d27700d8c06d88e0dae80287965c54b5f0a76fc94014acd5678631fe12",
+      "quote": "Siz gerçek bir öğretmensiniz!",
+      "categories": []
+    },
+    {
+      "id": 2,
+      "originalFile": "2.jpg",
+      "sha256": "68fbdb413a69fd771e33fa93d778a73781b0ca61bc0f2fa8ae8da479c7c553ca",
+      "quote": "enerjim yerine geldi kabızlık sorunu çözüldü",
+      "categories": [
+        "Sindirim",
+        "Enerji"
+      ]
+    },
+    {
+      "id": 3,
+      "originalFile": "3.jpg",
+      "sha256": "1dfb381aa4fe4b6660498baed93f3ed68f65ff467880c3bf203f210ec98d1763",
+      "quote": "Belimin ağrısı çok daha iyi bugün",
+      "categories": []
+    },
+    {
+      "id": 4,
+      "originalFile": "4.jpg",
+      "sha256": "3c3fa0a4286b8d7424148b335801a642ca850a80e83057dfba420663c70f8955",
+      "quote": "sıkılaştım , ödemlerim gitti",
+      "categories": [
+        "Karın",
+        "Sindirim",
+        "Enerji"
+      ]
+    },
+    {
+      "id": 5,
+      "originalFile": "5.jpg",
+      "sha256": "28cdcd43da5a2f9bdf48066b9c24a8ccc81145f4fab5995d7e4ca15a0d9e9d66",
+      "quote": "evde yapabilecekleri gösterdin",
+      "categories": []
+    },
+    {
+      "id": 6,
+      "originalFile": "6.jpg",
+      "sha256": "4b300334f978d66b23121431eee8dc1b451faf488d939360fe89bb868cc3f1c6",
+      "quote": "hiçbir diyet uygulamadan 5 kilo verdim",
+      "categories": []
+    },
+    {
+      "id": 7,
+      "originalFile": "7.jpg",
+      "sha256": "c45c3b6bcdb8a7bce9cf6c516999ecf59e2051794c1590c27b29a2d763e78ebc",
+      "quote": "naulinin bedenime etkisi bambaşka oldu.",
+      "categories": [
+        "Karın",
+        "Enerji",
+        "Doğum sonrası"
+      ]
+    },
+    {
+      "id": 8,
+      "originalFile": "8.jpg",
+      "sha256": "1bef98a703efc662bc6998b118dd244ff9c9f6d7b28e001828dab6fd40319edf",
+      "quote": "Mükemmel bir eğitim süreciydi",
+      "categories": []
+    },
+    {
+      "id": 9,
+      "originalFile": "9.jpg",
+      "sha256": "bd9e0cd53821dfe8bc5c030e30117943e696f194ea1f72cd972a5b82fc4f06c1",
+      "quote": "Karın bölgem daha sıkı, daha ince",
+      "categories": [
+        "Karın",
+        "Sindirim",
+        "Enerji"
+      ]
+    },
+    {
+      "id": 10,
+      "originalFile": "10.jpg",
+      "sha256": "e21d7f83523b532924516895cc3049c07e048d477555f22fcccb3473ccaea2a0",
+      "quote": "şahane hissediyorum kendimi",
+      "categories": [
+        "Karın",
+        "Sindirim",
+        "Enerji"
+      ]
+    },
+    {
+      "id": 11,
+      "originalFile": "11.jpg",
+      "sha256": "b986a0b51d2d4591bb244201c2d867804fce9e229455de708e62098a0ecdc8c9",
+      "quote": "resmen enerji kaynağım olmuş Nauli",
+      "categories": [
+        "Enerji"
+      ]
+    },
+    {
+      "id": 12,
+      "originalFile": "12.jpg",
+      "sha256": "65de2f6c59ef20ef489fc330e43723a040c30a9a9b163200b892abad66ad40f5",
+      "quote": "Ve inan bana 10 dk ancak yapıyorum",
+      "categories": []
+    },
+    {
+      "id": 13,
+      "originalFile": "13.jpg",
+      "sha256": "b6c0f2d0d263d7ca535798e368d2e8a22ca88904e9283702ced5a4f34d840e72",
+      "quote": "guc verdin cesaret verdin",
+      "categories": [
+        "Enerji"
+      ]
+    },
+    {
+      "id": 14,
+      "originalFile": "14.jpg",
+      "sha256": "db47878dbdc5c1e080cb87c6380d6c075956f90cd6cce869b8ab07782de9cdd3",
+      "quote": "sizinle çalışmak çok keyifliydi",
+      "categories": []
+    }
+  ]
+}
