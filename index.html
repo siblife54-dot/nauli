@@ -17,6 +17,7 @@
     <script src="./assets/discovery.js?v=20261017-1" defer></script>
     <link rel="stylesheet" href="./assets/reviews.css?v=20261017-1">
     <script type="module" src="./assets/reviews.mjs?v=20261017-1"></script>
+    <link rel="stylesheet" href="./assets/medical-note.css?v=20261018-1">
   </head>
   <body>
     <main>
@@ -275,6 +276,18 @@
             <div class="review-viewer__zoom" role="group" aria-label="Yakınlaştırma"><button class="review-viewer__zoom-out" type="button" aria-label="Küçült"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14"/></svg></button><output aria-label="Yakınlaştırma oranı">100%</output><button class="review-viewer__zoom-in" type="button" aria-label="Büyüt"><svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5v14"/></svg></button></div>
           </footer>
         </dialog>
+      </section>
+      <section class="medical-note" id="dikkat" aria-labelledby="medical-note-title">
+        <div class="medical-note__card">
+          <div class="medical-note__header">
+            <svg class="medical-note__icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6"/><circle cx="12" cy="7.5" r=".75" fill="currentColor" stroke="none"/></svg>
+            <h2 class="medical-note__title" id="medical-note-title">DİKKAT!</h2>
+          </div>
+          <div class="medical-note__body">
+            <p><strong>Kontredikasyonlar:</strong> hamilelik, safra taşı, yüksek tansiyon, göbek fıtığı, yakın zamanda geçirilmiş amelyat(son 3 ayda).</p>
+            <p>Sezeryan doğum sonrası 6-8 ay geçmeli (iç dış dikişleriniz tamamen iyileşmesi gerekiyor)</p>
+          </div>
+        </div>
       </section>
     </main>
   </body>

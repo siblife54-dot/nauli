@@ -1,0 +1,55 @@
+/* Static, reusable note. All styling stays inside this component. */
+.medical-note {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 0 clamp(16px, 4vw, 24px) 46px;
+  background: #fcf5ed;
+  color: #44482e;
+  font-family: "Nauli Sans", Arial, sans-serif;
+}
+
+.medical-note__card {
+  padding: clamp(20px, 5vw, 26px);
+  border: 1px solid #eedccc;
+  border-radius: 22px;
+  background: #fcf7f0;
+}
+
+.medical-note__header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.medical-note__icon {
+  display: block;
+  flex: 0 0 20px;
+  color: #5d6543;
+}
+
+.medical-note__title {
+  margin: 0;
+  color: #41472f;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.medical-note__body {
+  margin-left: 9px;
+  padding-left: 20px;
+  border-left: 1px solid #b7706099;
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+}
+
+.medical-note__body p { margin: 0; }
+.medical-note__body p + p { margin-top: 12px; }
+.medical-note__body strong { font-weight: 700; }
+
+@media (min-width: 540px) {
+  .medical-note { padding-bottom: 64px; }
+}
