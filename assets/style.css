@@ -91,9 +91,8 @@ html, body { margin: 0; min-width: 280px; }
   appearance: none;
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
+  cursor: pointer;
 }
-
-.hero__cta:disabled { opacity: 1; }
 
 .hero__cta:focus-visible {
   outline: 3px solid #44482e;
