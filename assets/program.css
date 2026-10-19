@@ -1,0 +1,41 @@
+.program {
+  width: 100%;
+  max-width: 600px;
+  margin-inline: auto;
+  padding: 16px clamp(24px, 6.15vw, 40px) 46px;
+  color: #41472f;
+  font: 400 15px/1.6 "Nauli Sans", Arial, sans-serif;
+}
+
+.program h2 {
+  margin: 0;
+  font-family: "Nauli Serif", "Times New Roman", serif;
+  font-size: clamp(32px, 8.6vw, 48px);
+  font-weight: 300;
+  line-height: 1.13;
+  letter-spacing: -.025em;
+  text-wrap: pretty;
+}
+.program h2 > span { display: block; margin-bottom: 5px; }
+.program__intro { margin: 20px 0 0; color: #646c52; }
+.program__levels-title { margin: 30px 0 24px; font-size: 15px; font-weight: 700; line-height: 1.5; }
+.program__steps { margin: 0; padding: 0; list-style: none; }
+.program__step { position: relative; display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 16px; padding-bottom: 30px; }
+.program__step:last-child { padding-bottom: 0; }
+.program__step:not(:last-child)::before { content: ""; position: absolute; top: 41px; bottom: 0; left: 19.5px; width: 1px; background: #d8b7a6; }
+.program__number { display: grid; place-items: center; width: 40px; height: 40px; border: 1px solid #e8c9b8; border-radius: 50%; background: #faeee4; color: #9c5e50; font-size: 13px; }
+.program__step-copy { padding-top: 7px; }
+.program__step h4 { margin: 0 0 11px; font-size: 16px; font-weight: 700; line-height: 1.4; }
+.program__step ul { display: grid; gap: 7px; margin: 0; padding: 0; color: #646c52; list-style: none; }
+.program__step ul li { position: relative; padding-left: 13px; }
+.program__step ul li::before { content: ""; position: absolute; top: .67em; left: 0; width: 4px; height: 4px; border-radius: 50%; background: #b77060; }
+.program__telegram { display: flex; align-items: flex-start; gap: 12px; margin-top: 30px; padding: 18px; border: 1px solid #eedccc; border-radius: 18px; background: #f8eee3; }
+.program__telegram > svg { flex: 0 0 21px; margin-top: 1px; color: #6e715a; }
+.program__telegram > div { min-width: 0; }
+.program__telegram h3 { margin: 0; font-size: 14px; font-weight: 700; line-height: 1.5; }
+.program__telegram p { margin: 7px 0 0; color: #646c52; font-size: 14px; line-height: 1.55; }
+
+@media (min-width: 540px) {
+  .program { padding-top: 20px; padding-bottom: 64px; }
+  .program__step { gap: 22px; padding-bottom: 36px; }
+}

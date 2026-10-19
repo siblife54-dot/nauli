@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="./assets/reviews.css?v=20261018-background-1">
     <script type="module" src="./assets/reviews.mjs?v=20261017-1"></script>
     <link rel="stylesheet" href="./assets/medical-note.css?v=20261019-card-1">
+    <link rel="stylesheet" href="./assets/program.css?v=20261019-1">
+    <link rel="stylesheet" href="./assets/tariffs.css?v=20261019-1">
   </head>
   <body>
     <main>
@@ -278,6 +280,42 @@
           </footer>
         </dialog>
       </section>
+      <!-- program:start -->
+      <section class="program" id="program" aria-labelledby="program-title">
+        <header class="program__header">
+          <h2 id="program-title"><span>Nauli Programı:</span> Düz Bir Karına ve Sağlığa Giden Yolun</h2>
+          <p class="program__intro">Nauli, karın kaslarını güçlendiren, iç organları destekleyen ve vücudu yenileyen eşsiz bir tekniktir.</p>
+        </header>
+        <h3 class="program__levels-title">Program 3 seviyeden oluşur:</h3>
+        <ol class="program__steps">
+          <li class="program__step">
+            <span class="program__number" aria-hidden="true">01</span>
+            <div class="program__step-copy">
+              <h4>1. Seviye - Diyafram Nefesi</h4>
+              <ul><li>Doğru nefes almanın temeli</li><li>Karın kaslarının derin aktivasyonu</li></ul>
+            </div>
+          </li>
+          <li class="program__step">
+            <span class="program__number" aria-hidden="true">02</span>
+            <div class="program__step-copy">
+              <h4>2. Seviye - Vakum</h4>
+              <ul><li>Karın sıkılaştırma</li><li>İç organların sağlığı ve duruşun iyileştirilmesi</li></ul>
+            </div>
+          </li>
+          <li class="program__step">
+            <span class="program__number" aria-hidden="true">03</span>
+            <div class="program__step-copy">
+              <h4>3. Seviye - Nauli</h4>
+              <ul><li>Karın kaslarını tam kontrol etme</li><li>Metabolizmayı hızlandırma</li></ul>
+            </div>
+          </li>
+        </ol>
+        <aside class="program__telegram" aria-labelledby="telegram-training-title">
+          <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.35" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m21 3-4 18-6-6-4 3 1-7L21 3ZM8 11 3 9l18-6M8 11l3 4L21 3"/></svg>
+          <div><h3 id="telegram-training-title">Telegram üzerinden eğitim</h3><p>Eğitim özel Telegram kanalında gerçekleşecektir, süreci/erişimi 2 ay.</p></div>
+        </aside>
+      </section>
+      <!-- program:end -->
       <section class="medical-note" id="dikkat" aria-labelledby="medical-note-title">
         <div class="medical-note__card">
           <div class="medical-note__header">
@@ -291,6 +329,88 @@
         </div>
       </section>
       </div>
+      <!-- tariffs:start -->
+      <section class="tariffs" id="tarifeler" aria-labelledby="tariffs-title">
+        <header class="tariffs__header">
+          <p class="tariffs__eyebrow">NAULI / TARİFELER</p>
+          <h2 id="tariffs-title"><span>Senin yolculuğun.</span><em>Senin seçimin.</em></h2>
+          <p class="tariffs__intro">Aynı eğitim. Farklı destek seviyeleri.</p>
+          <p class="tariffs__details">3 SEVİYE · 2 AY · TELEGRAM</p>
+        </header>
+        <div class="tariffs__cards">
+          <article class="tariff tariff--olive" aria-labelledby="tariff-temel-title">
+            <span class="tariff__number">01</span>
+            <h3 id="tariff-temel-title">NAULİ TEMEL PAKET</h3>
+            <p class="tariff__price"><data value="17000">17.000 <span>TL</span></data></p>
+            <p class="tariff__phrase">“Benim için sistem ve asistan desteği yeterli.”</p>
+            <p class="tariff__description">Kendi hızında öğren, sistemli ilerle.</p>
+            <div class="tariff__includes">
+              <h4>Bu pakete dahil olanlar</h4>
+              <ul>
+                <li>3 aşamalı 2 aylık Nauli eğitimi</li>
+                <li>Nauli uygulama videoları</li>
+                <li>Kişisel ilerleme sistemi</li>
+                <li>Asistan desteği</li>
+                <li>Genel öğrenci grubu</li>
+                <li>Asistana gün içinde soru sorma imkânı</li>
+                <li>Aşama sonlarında teknik kontrol ve yönlendirme</li>
+              </ul>
+            </div>
+            <p class="tariff__conditions">Bu pakette birebir günlük takip yoktur. Asistanın desteği sayesinde süreç boyunca yalnız değilsin.</p>
+            <button class="tariff__purchase" type="button" disabled data-plan="temel" title="Ödeme bağlantısı henüz eklenmedi"><span>Satın al</span><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></button>
+          </article>
+          <article class="tariff tariff--terracotta" aria-labelledby="tariff-yakin-takip-title">
+            <span class="tariff__number">02</span>
+            <h3 id="tariff-yakin-takip-title">NAULİ YAKIN TAKİP</h3>
+            <p class="tariff__price"><data value="29000">29.000 <span>TL</span></data></p>
+            <p class="tariff__phrase">“İlerlememi takip edecek ve bana düzenli olarak yön verecek birinin olmasını istiyorum.”</p>
+            <p class="tariff__description">Asistanın desteğine ek olarak, sürecine ben de düzenli olarak dahil oluyorum.</p>
+            <div class="tariff__includes">
+              <h4>Bu pakete dahil olanlar</h4>
+              <ul>
+                <li>3 aşamalı 2 aylık Nauli eğitimi</li>
+                <li>Uygulama videoları</li>
+                <li>Öğrenci grubu</li>
+                <li>Asistan desteği + Asistana soru sorma imkânı</li>
+                <li>Derslerin daha sık kişisel kontrolü</li>
+                <li>Benim tarafımdan düzenli geri bildirim (Haftalık ilerleme takibi)</li>
+                <li>Haftalık değerlendirme / yönlendirme</li>
+                <li>Belirli aşamalarda birebir online görüşmeler</li>
+                <li>Tekniğe yönelik kişisel düzeltmeler</li>
+                <li>Bir sonraki aşamaya geçiş için kişisel yönlendirme</li>
+              </ul>
+            </div>
+            <p class="tariff__conditions">Bu paket günlük birebir iletişim içermez.</p>
+            <button class="tariff__purchase" type="button" disabled data-plan="yakin-takip" title="Ödeme bağlantısı henüz eklenmedi"><span>Satın al</span><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></button>
+          </article>
+          <article class="tariff tariff--deep-olive" aria-labelledby="tariff-ozel-title">
+            <span class="tariff__number">03</span>
+            <h3 id="tariff-ozel-title">NAULİ ÖZEL</h3>
+            <p class="tariff__price"><data value="55000">55.000 <span>TL</span></data></p>
+            <p class="tariff__capacity">Sadece 5 kişi kontenjan</p>
+            <p class="tariff__phrase">“Nauli sürecimi doğrudan Valerika ile birebir yürütmek istiyorum.”</p>
+            <p class="tariff__description">Bu programda sadece eğitimi almıyorsun. Süreci benimle birlikte yürütüyorsun.</p>
+            <div class="tariff__includes">
+              <h4>Bu pakete dahil olanlar</h4>
+              <ul>
+                <li>3 aşamalı 2 aylık Nauli eğitimi</li>
+                <li>Uygulama videoları</li>
+                <li>Günlük birebir iletişim</li>
+                <li>Günlük kişisel takip</li>
+                <li>Günlük teknik geri bildirim</li>
+                <li>Onlain uygulamalar / birebir Zoom görüşmeleri</li>
+                <li>Kişiye özel uygulama planı</li>
+                <li>Bedeninin verdiği yanıtlara göre günlük yönlendirme</li>
+                <li>Tekniğin kişiye özel düzeltilmesi</li>
+                <li>Öncelikli iletişim</li>
+              </ul>
+            </div>
+            <p class="tariff__conditions">Bu pakette seni sadece bir öğrenci olarak değil, birebir çalıştığım özel bir öğrenci olarak takip ediyorum.</p>
+            <button class="tariff__purchase" type="button" disabled data-plan="ozel" title="Ödeme bağlantısı henüz eklenmedi"><span>Satın al</span><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></button>
+          </article>
+        </div>
+      </section>
+      <!-- tariffs:end -->
     </main>
   </body>
 </html>
