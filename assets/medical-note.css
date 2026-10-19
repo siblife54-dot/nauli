@@ -12,6 +12,7 @@
   padding: clamp(20px, 5vw, 26px);
   border: 1px solid #eedccc;
   border-radius: 22px;
+  background: #fcf7f0;
 }
 
 .medical-note__header {
