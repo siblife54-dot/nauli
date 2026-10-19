@@ -82,6 +82,7 @@ export class Reviews {
     this.dialog.addEventListener('close', () => this.finishViewer());
     this.viewerPrevious.addEventListener('click', () => this.moveViewer(-1));
     this.viewerNext.addEventListener('click', () => this.moveViewer(1));
+    this.setupViewerSwipe();
     this.zoomIn.addEventListener('click', () => this.changeZoom(.5));
     this.zoomOut.addEventListener('click', () => this.changeZoom(-.5));
     this.viewerImage.addEventListener('dblclick', event => {
@@ -301,6 +302,43 @@ export class Reviews {
     this.renderViewer();
   }
 
+  setupViewerSwipe() {
+    this.viewerPointers = new Set();
+    window.visualViewport?.addEventListener('resize', () => {
+      if (this.dialog.open) this.updateViewerGestureMode();
+    });
+    this.viewerViewport.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch') return;
+      this.viewerPointers.add(event.pointerId);
+      if (!this.dialog.open || !event.isPrimary || this.viewerPointers.size !== 1 || this.zoom !== 1 || (window.visualViewport?.scale || 1) > 1.01) {
+        this.viewerSwipe = null;
+        return;
+      }
+      this.viewerSwipe = { id: event.pointerId, x: event.clientX, y: event.clientY, time: performance.now() };
+    });
+    this.viewerViewport.addEventListener('pointercancel', event => {
+      this.viewerPointers.delete(event.pointerId);
+      this.viewerSwipe = null;
+    });
+    this.viewerViewport.addEventListener('pointerup', event => {
+      if (event.pointerType !== 'touch') return;
+      this.viewerPointers.delete(event.pointerId);
+      const start = this.viewerSwipe;
+      this.viewerSwipe = null;
+      if (!start || start.id !== event.pointerId || this.viewerPointers.size || this.zoom !== 1 || (window.visualViewport?.scale || 1) > 1.01) return;
+      const dx = event.clientX - start.x;
+      const dy = event.clientY - start.y;
+      if (performance.now() - start.time <= 900 && Math.abs(dx) >= 48 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        this.moveViewer(dx < 0 ? 1 : -1);
+      }
+    });
+  }
+
+  updateViewerGestureMode() {
+    this.viewerSwipe = null;
+    this.viewerViewport.classList.toggle('is-zoomed', this.zoom > 1 || (window.visualViewport?.scale || 1) > 1.01);
+  }
+
   renderViewer() {
     const review = this.viewerReviews[this.viewerIndex];
     this.zoom = 1;
@@ -327,6 +365,7 @@ export class Reviews {
 
   layoutViewer(preserveCenter) {
     if (!this.dialog.open) return;
+    this.updateViewerGestureMode();
     const review = this.viewerReviews[this.viewerIndex];
     const viewport = this.viewerViewport;
     const viewportWidth = viewport.clientWidth;
@@ -351,6 +390,8 @@ export class Reviews {
   }
 
   finishViewer() {
+    this.viewerSwipe = null;
+    this.viewerPointers.clear();
     document.body.style.overflow = this.oldBodyOverflow;
     if (this.viewerFromCarousel) {
       this.index = this.viewerIndex;
