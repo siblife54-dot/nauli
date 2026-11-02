@@ -10,6 +10,7 @@
     <meta property="og:description" content="Günde sadece 10–15 dakika ile bedenini içeriden dönüştür. Daha doğru nefes. Daha düz bir karın. Daha fazla enerji. Daha güçlü bir sen.">
     <meta property="og:type" content="website">
     <meta property="og:image" content="https://siblife54-dot.github.io/nauli/assets/nauli-hero-20261019.png">
+    <script src="./assets/access-route.js?v=20261102-1"></script>
     <script src="./assets/navigation.js?v=20261019-1"></script>
     <link rel="preload" href="./assets/nauli-sans-regular.woff" as="font" type="font/woff" crossorigin>
     <link rel="preload" href="./assets/nauli-serif-light.woff" as="font" type="font/woff" crossorigin>
@@ -21,9 +22,10 @@
     <link rel="stylesheet" href="./assets/medical-note.css?v=20261019-card-1">
     <link rel="stylesheet" href="./assets/program.css?v=20261019-1">
     <link rel="stylesheet" href="./assets/tariffs.css?v=20261019-1">
+    <link rel="stylesheet" href="./assets/access.css?v=20261102-1">
   </head>
   <body>
-    <main>
+    <main id="landing">
       <section class="hero" id="baslangic" aria-labelledby="hero-title">
         <!-- User-supplied composition, preserved byte-for-byte; no portrait retouching or generation. -->
         <img class="hero__art" src="./assets/nauli-hero-20261019.png" width="941" height="1672" alt="" aria-hidden="true" fetchpriority="high" decoding="async">
@@ -291,6 +293,20 @@
         </div>
       </section>
       <!-- tariffs:end -->
+    </main>
+    <main class="access-page" id="access-page" aria-labelledby="access-title">
+      <div class="access__card">
+        <p class="access__brand">NAULI / ERİŞİM</p>
+        <div class="access__mark" aria-hidden="true"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path data-access-icon d="M12 7v6m0 4h.01"/></svg></div>
+        <h1 id="access-title" data-access-title tabindex="-1">Erişimin hazırlanıyor.</h1>
+        <p class="access__intro" data-access-intro>Telegram erişim bilgilerin birazdan burada görünecek.</p>
+        <div class="access__plan" data-access-plan hidden><span class="access__plan-label">Seçtiğin paket</span><strong class="access__plan-name" data-access-plan-name></strong></div>
+        <p class="access__message" data-access-message role="status" aria-live="polite">Bu ekran açılmazsa ödeme sonrası bağlantını yeniden aç.</p>
+        <a class="access__telegram" data-access-telegram rel="noreferrer" referrerpolicy="no-referrer" hidden><span>Telegram'dan Erişim Al</span><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true"><path d="M3 12h17m-7-7 7 7-7 7"/></svg></a>
+        <p class="access__verification" data-access-verification hidden>Ödeme ve paket bilgilerin botta doğrulandıktan sonra erişimin açılacak.</p>
+        <p class="access__test" data-access-test hidden>Test modu</p>
+        <a class="access__back" href="./">Ana sayfaya dön</a>
+      </div>
     </main>
   </body>
 </html>
