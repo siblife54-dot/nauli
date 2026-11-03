@@ -23,9 +23,16 @@
     <link rel="stylesheet" href="./assets/program.css?v=20261019-1">
     <link rel="stylesheet" href="./assets/tariffs.css?v=20261019-1">
     <link rel="stylesheet" href="./assets/access.css?v=20261102-1">
+    <link rel="stylesheet" href="./assets/test-checkout.css?v=20261103-1">
+    <script type="module" src="./assets/test-checkout.mjs?v=20261103-1"></script>
   </head>
   <body>
     <main id="landing">
+      <aside class="test-checkout" id="test-checkout" aria-label="Тестовая оплата NAULI" hidden>
+        <p data-test-checkout-status>Тест Stripe · NAULİ TEMEL PAKET</p>
+        <a class="test-checkout__action" data-test-checkout-link referrerpolicy="no-referrer" rel="noreferrer" hidden>Тестовая оплата — 100 TRY</a>
+        <button class="test-checkout__action" data-test-checkout-disabled type="button" disabled>Тестовая оплата — 100 TRY</button>
+      </aside>
       <section class="hero" id="baslangic" aria-labelledby="hero-title">
         <!-- User-supplied composition, preserved byte-for-byte; no portrait retouching or generation. -->
         <img class="hero__art" src="./assets/nauli-hero-20261019.png" width="941" height="1672" alt="" aria-hidden="true" fetchpriority="high" decoding="async">

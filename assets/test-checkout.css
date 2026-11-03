@@ -1,0 +1,6 @@
+.test-checkout[hidden], .test-checkout [hidden] { display: none !important; }
+.test-checkout { width: 100%; max-width: 600px; margin-inline: auto; padding: 20px; border-bottom: 1px solid #e7cdbd; background: #fcf5ed; color: #41472f; font: 400 14px/1.5 "Nauli Sans", Arial, sans-serif; }
+.test-checkout p { margin: 0 0 12px; color: #646c52; }
+.test-checkout__action { display: block; width: 100%; min-height: 52px; padding: 14px 16px; border: 0; border-radius: 999px; background: #5d6543; color: #fffdf8; font: 400 15px/1.5 "Nauli Sans", Arial, sans-serif; text-align: center; text-decoration: none; }
+.test-checkout__action:disabled { opacity: .55; cursor: not-allowed; }
+.test-checkout__action:focus-visible { outline: 2px solid #41472f; outline-offset: 4px; }

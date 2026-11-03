@@ -88,6 +88,8 @@
 
 ## Запуск и публикация
 
+Тестовая покупка 100 TRY: `?test_checkout=1` показывает отдельную временную кнопку, обычные посетители её не видят. Ссылка пользователя хранится только в `assets/test-checkout-config.mjs`, отдельная логика — в `assets/test-checkout-logic.mjs` / `assets/test-checkout.mjs`, стили — `assets/test-checkout.css`. Валидатор не разрешает live-ссылки. Настоящие тарифы и их ссылки не меняются. Инструкция и результат тестового возврата: [docs/test-checkout.md](docs/test-checkout.md). Проверки: `node --test scripts/test-checkout.test.mjs scripts/access.test.mjs scripts/reviews.test.mjs`.
+
 Для локального просмотра из корня репозитория: `python -m http.server 4174 --bind 127.0.0.1`.
 
 GitHub Pages: ветка `main`, папка `/ (root)`. Пакеты, сборка и внешние сервисы не требуются.
