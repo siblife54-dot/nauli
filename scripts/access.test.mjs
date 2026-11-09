@@ -98,11 +98,11 @@ test('A future configured bot is used only for its own plan (isolated test fixtu
   assert.equal(resolveAccess('?plan=temel&session_id=cs_test_a1Example', plans).telegramUrl, 'https://t.me/nauli_temel_paket_bot?start=a1Example');
 });
 
-test('Access labels match the temporary live-checkout tariffs and stable IDs', () => {
+test('Access labels match commercial displayed tariffs and stable IDs', () => {
   for (const [route, tariffId] of [['temel', 'temel'], ['yakin', 'yakin-takip'], ['ozel', 'ozel']]) {
     assert.equal(ACCESS_PLANS[route].name, TARIFFS.find(plan => plan.id === tariffId).name);
   }
-  assert.deepEqual(TARIFFS.map(plan => plan.amountTRY), [100, 101, 102]);
+  assert.deepEqual(TARIFFS.map(plan => plan.amountTRY), [17000, 29000, 55000]);
   assert.deepEqual(TARIFFS.map(plan => plan.id), ['temel', 'yakin-takip', 'ozel']);
   assert.deepEqual(TARIFFS.map(plan => plan.paymentUrl), [
     'https://buy.stripe.com/7sYaEX2YqaK073WbstfMA0u',
