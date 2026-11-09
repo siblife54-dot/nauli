@@ -98,20 +98,25 @@ test('A future configured bot is used only for its own plan (isolated test fixtu
   assert.equal(resolveAccess('?plan=temel&session_id=cs_test_a1Example', plans).telegramUrl, 'https://t.me/nauli_temel_paket_bot?start=a1Example');
 });
 
-test('Access labels match existing tariffs, without changing tariff IDs, prices or links', () => {
+test('Access labels match the temporary live-checkout tariffs and stable IDs', () => {
   for (const [route, tariffId] of [['temel', 'temel'], ['yakin', 'yakin-takip'], ['ozel', 'ozel']]) {
     assert.equal(ACCESS_PLANS[route].name, TARIFFS.find(plan => plan.id === tariffId).name);
   }
-  assert.deepEqual(TARIFFS.map(plan => plan.amountTRY), [17000, 29000, 55000]);
+  assert.deepEqual(TARIFFS.map(plan => plan.amountTRY), [100, 101, 102]);
   assert.deepEqual(TARIFFS.map(plan => plan.id), ['temel', 'yakin-takip', 'ozel']);
-  assert.deepEqual(TARIFFS.map(plan => plan.paymentUrl), [null, null, null]);
+  assert.deepEqual(TARIFFS.map(plan => plan.paymentUrl), [
+    'https://buy.stripe.com/7sYaEX2YqaK073WbstfMA0u',
+    'https://buy.stripe.com/fZu3cv0Qi5pG880fIJfMA0v',
+    'https://buy.stripe.com/7sY9AT6aC3hyewo2VXfMA0w'
+  ]);
 });
 
-test('Commercial cards stay disabled until their own verified Payment Links are configured', () => {
+test('All three purchase buttons are active links to their own matching live Payment Links', () => {
   const html = renderTariffs();
-  assert.equal((html.match(/<button class="tariff__purchase"/g) || []).length, 3);
-  assert.doesNotMatch(html, /<a class="tariff__purchase"/);
-  for (const id of ['temel', 'yakin-takip', 'ozel']) {
-    assert.ok(html.includes(`disabled data-plan="${id}"`));
+  assert.equal((html.match(/<a class="tariff__purchase"/g) || []).length, 3);
+  assert.doesNotMatch(html, /<button class="tariff__purchase"/);
+  for (const plan of TARIFFS) {
+    assert.ok(html.includes(`href="${plan.paymentUrl}" data-plan="${plan.id}"`));
+    assert.ok(html.includes(`<data value="${plan.amountTRY}">${plan.amountTRY} <span>TL</span></data>`));
   }
 });
