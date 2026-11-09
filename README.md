@@ -79,7 +79,7 @@
 
 2 ноября добавлен отдельный экран на том же URL: `?plan=temel&session_id={CHECKOUT_SESSION_ID}` (также `yakin`, `ozel`). Обычные посещения показывают прежний лендинг. Экран оформлен на турецком, показывает пакет и ведёт в его Telegram-бота только после проверки формата ID и ограничения `start` до 64 символов. Сам сайт оплату не проверяет и доступ не выдаёт: это ответственность BotHunter через Stripe API.
 
-- `assets/access-config.mjs` — централизованные имена пакетов и usernames; у `yakin` и `ozel` оставить `null` до предоставления собственных ботов.
+- `assets/access-config.mjs` — централизованные имена пакетов и usernames: `temel` → `nauli_temel_paket_bot`, `yakin` → `nauli_yakin_takip_bot`, `ozel` → `nauli_ozel_bot`. Внутренний ID карточки YAKIN остаётся `yakin-takip`, параметр возврата Stripe — `plan=yakin`. Коммерческие `paymentUrl` всех трёх карточек остаются `null` до получения проверенных ссылок на соответствующие суммы.
 - `assets/access-logic.mjs` — чистая валидация, маршрутизация и построение deep link без потери символов.
 - `assets/access-route.js`, `assets/access-page.mjs`, `assets/access.css` — переключение экрана, его состояния и оформление.
 - `scripts/access.test.mjs` — проверки всех тарифов, ID, legacy URL, границ длины и отсутствия подмены ботов.

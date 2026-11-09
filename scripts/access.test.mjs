@@ -3,6 +3,13 @@ import assert from 'node:assert/strict';
 import { ACCESS_PLANS } from '../assets/access-config.mjs';
 import { resolveAccess } from '../assets/access-logic.mjs';
 import { TARIFFS } from '../assets/tariffs-data.mjs';
+import { renderTariffs } from '../components/tariffs.mjs';
+
+const expectedBots = {
+  temel: 'nauli_temel_paket_bot',
+  yakin: 'nauli_yakin_takip_bot',
+  ozel: 'nauli_ozel_bot'
+};
 
 test('Ordinary visitors stay on the landing, including existing queries', () => {
   for (const search of ['', '?v=2247191', '?utm_source=telegram&v=1']) assert.deepEqual(resolveAccess(search), { kind: 'landing' });
@@ -18,37 +25,38 @@ test('The legacy URL defaults only a valid test session to temel', () => {
   assert.equal(resolveAccess('?session_id=cs_live_a1AbC_09-Z').code, 'missing_plan');
 });
 
-test('Each explicit plan retains its own name, for test and future live IDs', () => {
+test('Each explicit plan routes only to its configured bot, for test and future live IDs', () => {
   for (const mode of ['test', 'live']) {
     for (const planId of ['temel', 'yakin', 'ozel']) {
       const result = resolveAccess(`?plan=${planId}&session_id=cs_${mode}_a1Example`);
       assert.equal(result.planId, planId);
       assert.equal(result.planName, ACCESS_PLANS[planId].name);
       assert.equal(result.mode, mode);
-      if (planId === 'temel') {
-        assert.equal(result.kind, 'ready');
-        assert.equal(result.payload, 'a1Example');
-      } else {
-        assert.equal(result.kind, 'unavailable');
-        assert.ok(!('telegramUrl' in result));
-      }
+      assert.equal(result.kind, 'ready');
+      assert.equal(ACCESS_PLANS[planId].botUsername, expectedBots[planId]);
+      assert.equal(result.payload, 'a1Example');
+      assert.equal(result.telegramUrl, `https://t.me/${expectedBots[planId]}?start=a1Example`);
     }
   }
 });
 
 test('Payload bounds: preserve every character; 64 accepted, 65 rejected', () => {
-  for (const length of [1, 63, 64]) {
-    const suffix = 'A'.repeat(length - 1) + 'z';
-    const result = resolveAccess(`?plan=temel&session_id=cs_test_${suffix}`);
-    assert.equal(result.kind, 'ready');
-    assert.equal(result.payload, suffix);
-    assert.equal(new URL(result.telegramUrl).searchParams.get('start'), suffix);
+  for (const planId of ['temel', 'yakin', 'ozel']) {
+    for (const mode of ['test', 'live']) {
+      for (const length of [1, 63, 64]) {
+        const suffix = 'A'.repeat(length - 1) + 'z';
+        const result = resolveAccess(`?plan=${planId}&session_id=cs_${mode}_${suffix}`);
+        assert.equal(result.kind, 'ready');
+        assert.equal(result.payload, suffix);
+        assert.equal(new URL(result.telegramUrl).searchParams.get('start'), suffix);
+      }
+      const tooLong = resolveAccess(`?plan=${planId}&session_id=cs_${mode}_${'A'.repeat(65)}`);
+      assert.equal(tooLong.code, 'payload_too_long');
+      assert.ok(!('telegramUrl' in tooLong));
+      const nested = resolveAccess(`?plan=${planId}&session_id=cs_${mode}_cs_test_cs_live_Ab9-`);
+      assert.equal(nested.payload, 'cs_test_cs_live_Ab9-');
+    }
   }
-  const tooLong = resolveAccess(`?plan=temel&session_id=cs_test_${'A'.repeat(65)}`);
-  assert.equal(tooLong.code, 'payload_too_long');
-  assert.ok(!('telegramUrl' in tooLong));
-  const nested = resolveAccess('?plan=temel&session_id=cs_test_cs_test_cs_live_Ab9-');
-  assert.equal(nested.payload, 'cs_test_cs_live_Ab9-');
 });
 
 test('Malformed, empty, unexpanded or whitespace-bearing session IDs never make a link', () => {
@@ -72,13 +80,14 @@ test('Unknown/empty plans, prototype keys and duplicate parameters fail closed',
 });
 
 test('Unset or invalid bot configuration never falls back to a different bot', () => {
-  assert.equal(ACCESS_PLANS.yakin.botUsername, null);
-  assert.equal(ACCESS_PLANS.ozel.botUsername, null);
-  for (const botUsername of [null, undefined, '', 'https://example.com/bot', 'bad/name_bot', 'bad?start=other', 'bad-name_bot', 'A'.repeat(33) + 'bot', 'not_a_bot_name']) {
-    const plans = { ...ACCESS_PLANS, temel: { ...ACCESS_PLANS.temel, botUsername } };
-    const result = resolveAccess('?plan=temel&session_id=cs_test_a1Example', plans);
-    assert.equal(result.kind, 'unavailable');
-    assert.ok(!('telegramUrl' in result));
+  for (const planId of ['temel', 'yakin', 'ozel']) {
+    for (const botUsername of [null, undefined, '', 'https://example.com/bot', 'bad/name_bot', 'bad?start=other', 'bad-name_bot', 'A'.repeat(33) + 'bot', 'not_a_bot_name']) {
+      const plans = { ...ACCESS_PLANS, [planId]: { ...ACCESS_PLANS[planId], botUsername } };
+      const result = resolveAccess(`?plan=${planId}&session_id=cs_test_a1Example`, plans);
+      assert.equal(result.kind, 'unavailable');
+      assert.equal(result.planId, planId);
+      assert.ok(!('telegramUrl' in result));
+    }
   }
 });
 
@@ -94,4 +103,15 @@ test('Access labels match existing tariffs, without changing tariff IDs, prices 
     assert.equal(ACCESS_PLANS[route].name, TARIFFS.find(plan => plan.id === tariffId).name);
   }
   assert.deepEqual(TARIFFS.map(plan => plan.amountTRY), [17000, 29000, 55000]);
+  assert.deepEqual(TARIFFS.map(plan => plan.id), ['temel', 'yakin-takip', 'ozel']);
+  assert.deepEqual(TARIFFS.map(plan => plan.paymentUrl), [null, null, null]);
+});
+
+test('Commercial cards stay disabled until their own verified Payment Links are configured', () => {
+  const html = renderTariffs();
+  assert.equal((html.match(/<button class="tariff__purchase"/g) || []).length, 3);
+  assert.doesNotMatch(html, /<a class="tariff__purchase"/);
+  for (const id of ['temel', 'yakin-takip', 'ozel']) {
+    assert.ok(html.includes(`disabled data-plan="${id}"`));
+  }
 });

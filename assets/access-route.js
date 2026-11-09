@@ -5,7 +5,7 @@
   document.documentElement.dataset.accessView = '';
   document.addEventListener('DOMContentLoaded', () => {
     const root = document.getElementById('access-page');
-    import('./access-page.mjs?v=20261102-1')
+    import('./access-page.mjs?v=20261109-1')
       .then(({ showAccess }) => showAccess(root, location.search))
       .catch(() => {
         root.dataset.state = 'error';

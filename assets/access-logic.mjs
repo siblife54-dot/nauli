@@ -1,4 +1,4 @@
-import { ACCESS_PLANS } from './access-config.mjs?v=20261102-1';
+import { ACCESS_PLANS } from './access-config.mjs?v=20261109-1';
 
 const fail = (code, context = {}) => ({ kind: 'error', code, ...context });
 
