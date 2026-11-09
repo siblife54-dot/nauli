@@ -8,10 +8,10 @@ export const ACCESS_PLANS = Object.freeze({
   }),
   yakin: Object.freeze({
     name: 'NAULİ YAKIN TAKİP',
-    botUsername: null
+    botUsername: 'nauli_yakin_takip_bot'
   }),
   ozel: Object.freeze({
     name: 'NAULİ ÖZEL',
-    botUsername: null
+    botUsername: 'nauli_ozel_bot'
   })
 });
