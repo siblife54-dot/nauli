@@ -1,11 +1,11 @@
-// Prices are in Turkish lira. Add only verified payment URLs for the matching plan/amount.
+// Temporary LIVE checkout QA: actual Stripe payments are 100/101/102 TRY. Restore commercial prices (17000/29000/55000 TRY) and replace Payment Links before launch.
 export const TARIFFS = [
   {
     id: 'temel',
     number: '01',
     name: 'NAULİ TEMEL PAKET',
-    amountTRY: 17000,
-    paymentUrl: null,
+    amountTRY: 100,
+    paymentUrl: 'https://buy.stripe.com/7sYaEX2YqaK073WbstfMA0u',
     tone: 'olive',
     phrase: '“Benim için sistem ve asistan desteği yeterli.”',
     description: 'Kendi hızında öğren, sistemli ilerle.',
@@ -24,8 +24,8 @@ export const TARIFFS = [
     id: 'yakin-takip',
     number: '02',
     name: 'NAULİ YAKIN TAKİP',
-    amountTRY: 29000,
-    paymentUrl: null,
+    amountTRY: 101,
+    paymentUrl: 'https://buy.stripe.com/fZu3cv0Qi5pG880fIJfMA0v',
     tone: 'terracotta',
     phrase: '“İlerlememi takip edecek ve bana düzenli olarak yön verecek birinin olmasını istiyorum.”',
     description: 'Asistanın desteğine ek olarak, sürecine ben de düzenli olarak dahil oluyorum.',
@@ -47,8 +47,8 @@ export const TARIFFS = [
     id: 'ozel',
     number: '03',
     name: 'NAULİ ÖZEL',
-    amountTRY: 55000,
-    paymentUrl: null,
+    amountTRY: 102,
+    paymentUrl: 'https://buy.stripe.com/7sY9AT6aC3hyewo2VXfMA0w',
     tone: 'deep-olive',
     capacity: 'Sadece 5 kişi kontenjan',
     phrase: '“Nauli sürecimi doğrudan Valerika ile birebir yürütmek istiyorum.”',
