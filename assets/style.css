@@ -46,6 +46,7 @@ html, body { margin: 0; min-width: 280px; }
   width: 100%;
   max-width: 600px;
   margin-inline: auto;
+  container-type: inline-size;
 }
 
 .hero__art {
@@ -53,6 +54,58 @@ html, body { margin: 0; min-width: 280px; }
   width: 100%;
   height: auto;
   aspect-ratio: 941 / 1672;
+}
+
+/* Anchor both badges to the original badge row in the 941 × 1672 artwork. */
+.hero__badges {
+  position: absolute;
+  top: 4.19%;
+  left: 26.67%;
+  width: 54%;
+  height: 4.01%;
+  display: grid;
+  grid-template-columns: 236fr 264fr;
+  gap: 0.96cqw;
+  color: #765039;
+  font: 400 2.7cqw / 1.15 "Nauli Sans", Arial, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero__badge {
+  position: relative;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.hero__badge--start {
+  isolation: isolate;
+}
+
+/* Cover the original lettering while keeping the left badge's painted edge. */
+.hero__badge--start::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 22% 6% 14%;
+  background: #f3d6ca;
+  mask-image: linear-gradient(to bottom, transparent, #000 12% 87%, transparent),
+    linear-gradient(to right, transparent, #000 3% 97%, transparent);
+  mask-composite: intersect;
+}
+
+.hero__badge--duration {
+  border-radius: 999px;
+  background: linear-gradient(#f0cdc1, #efcbbf);
+}
+
+.hero__badge-caption {
+  position: absolute;
+  top: 112%;
+  inset-inline: 0;
+  color: #79614d;
+  font-size: 2.08cqw;
 }
 
 .hero__editable-copy {
