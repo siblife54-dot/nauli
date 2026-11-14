@@ -4,42 +4,43 @@
   max-width: 600px;
   margin-inline: auto;
   padding: 0 clamp(16px, 4vw, 24px) 46px;
-  color: #44482e;
+  color: #333b27;
   font-family: "Nauli Sans", Arial, sans-serif;
 }
 
 .medical-note__card {
+  --medical-note-accent: #bb6553;
+
   padding: clamp(20px, 5vw, 26px);
-  border: 1px solid #eedccc;
+  border: 1px solid var(--medical-note-accent);
   border-radius: 22px;
-  background: #fcf7f0;
+  background: #faeae4;
 }
 
 .medical-note__header {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 14px;
 }
 
 .medical-note__icon {
   display: block;
-  flex: 0 0 20px;
-  color: #5d6543;
+  flex: 0 0 26px;
+  color: var(--medical-note-accent);
 }
 
 .medical-note__title {
   margin: 0;
-  color: #41472f;
-  font-size: 17px;
+  font-size: 20px;
   font-weight: 700;
   line-height: 1.4;
 }
 
 .medical-note__body {
-  margin-left: 9px;
-  padding-left: 20px;
-  border-left: 1px solid #b7706099;
+  margin-left: 12px;
+  padding-left: 19px;
+  border-left: 3px solid var(--medical-note-accent);
   font-size: 15px;
   line-height: 1.6;
   overflow-wrap: break-word;
