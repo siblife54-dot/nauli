@@ -56,38 +56,56 @@ html, body { margin: 0; min-width: 280px; }
   aspect-ratio: 941 / 1672;
 }
 
-/* Align the new copy with the existing right pill in the 941 × 1672 artwork. */
-.hero__duration {
+/* Anchor both badges to the original badge row in the 941 × 1672 artwork. */
+.hero__badges {
   position: absolute;
-  top: 4.31%;
-  left: 52.72%;
-  width: 20.35%;
-  height: 3.83%;
-  margin: 0;
+  top: 4.19%;
+  left: 26.67%;
+  width: 54%;
+  height: 4.01%;
   display: grid;
-  place-items: center;
-  isolation: isolate;
+  grid-template-columns: 236fr 264fr;
+  gap: 0.96cqw;
   color: #765039;
-  font: 400 2.02cqw / 1.15 "Nauli Sans", Arial, sans-serif;
+  font: 400 2.7cqw / 1.15 "Nauli Sans", Arial, sans-serif;
   text-align: center;
   white-space: nowrap;
 }
 
-.hero__duration::before {
+.hero__badge {
+  position: relative;
+  margin: 0;
+  display: grid;
+  place-items: center;
+}
+
+.hero__badge--start {
+  isolation: isolate;
+}
+
+/* Cover the original lettering while keeping the left badge's painted edge. */
+.hero__badge--start::before {
   content: "";
   position: absolute;
   z-index: -1;
-  inset: 24% 29% 16%;
-  background: #f0cdc1;
-  mask-image: radial-gradient(ellipse farthest-corner, #000 76%, transparent);
+  inset: 22% 6% 14%;
+  background: #f3d6ca;
+  mask-image: linear-gradient(to bottom, transparent, #000 12% 87%, transparent),
+    linear-gradient(to right, transparent, #000 3% 97%, transparent);
+  mask-composite: intersect;
 }
 
-.hero__duration-caption {
+.hero__badge--duration {
+  border-radius: 999px;
+  background: linear-gradient(#f0cdc1, #efcbbf);
+}
+
+.hero__badge-caption {
   position: absolute;
   top: 112%;
   inset-inline: 0;
   color: #79614d;
-  font-size: 1.78cqw;
+  font-size: 2.08cqw;
 }
 
 .hero__editable-copy {
