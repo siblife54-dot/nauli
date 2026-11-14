@@ -46,6 +46,7 @@ html, body { margin: 0; min-width: 280px; }
   width: 100%;
   max-width: 600px;
   margin-inline: auto;
+  container-type: inline-size;
 }
 
 .hero__art {
@@ -53,6 +54,40 @@ html, body { margin: 0; min-width: 280px; }
   width: 100%;
   height: auto;
   aspect-ratio: 941 / 1672;
+}
+
+/* Align the new copy with the existing right pill in the 941 × 1672 artwork. */
+.hero__duration {
+  position: absolute;
+  top: 4.31%;
+  left: 52.72%;
+  width: 20.35%;
+  height: 3.83%;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+  color: #765039;
+  font: 400 2.02cqw / 1.15 "Nauli Sans", Arial, sans-serif;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.hero__duration::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 24% 29% 16%;
+  background: #f0cdc1;
+  mask-image: radial-gradient(ellipse farthest-corner, #000 76%, transparent);
+}
+
+.hero__duration-caption {
+  position: absolute;
+  top: 112%;
+  inset-inline: 0;
+  color: #79614d;
+  font-size: 1.78cqw;
 }
 
 .hero__editable-copy {
